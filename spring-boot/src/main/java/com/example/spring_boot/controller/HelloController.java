@@ -1,24 +1,25 @@
 package com.example.spring_boot.controller;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Component
 public class HelloController {
-
-    @GetMapping("/hello")
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return String.format("Hello %s from Spring Boot!", name);
-    }
 
     @GetMapping("/")
     public String home() {
-        return "Welcome to Spring Boot Application! Server is running on Java 25.";
+        return "Добро пожаловать)";
     }
 
-    @GetMapping("/info")
-    public String info() {
-        return "Spring Boot 3.5.7 with Java 25 - Everything works!";
+    @GetMapping("/hello")
+    public String hello() {
+        return "Привет Мир!";
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "Пу пу пу...";
     }
 }
